@@ -1,0 +1,23 @@
+.slide{
+  -webkit-appearance: none;
+  width: 300px;
+  height: 13px;
+  text-align:  center;
+  border-radius: 5px;  
+  background: rgb(21, 22, 36);
+  outline: none;
+  opacity: .9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slide::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: rgb(240, 38, 95);;
+  opacity: 1;
+  cursor: pointer;
+}
