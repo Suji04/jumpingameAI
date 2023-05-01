@@ -54,6 +54,30 @@ class NeuralNetwork {
     });
   }
 
+  crossover(rate, u) {
+    // Binomial crossover
+    tf.tidy(() => {
+      const weights = this.model.getWeights();
+      const uWeights = u.model.getWeights();
+      const crossedWeights = [];
+      for (let i = 0; i < weights.length; i++) {
+        let tensor = weights[i];
+        let uTensor = uWeights[i];
+        let shape = weights[i].shape;
+        let values = tensor.dataSync().slice();
+        let uValues = uTensor.dataSync().slice();
+        for (let j = 0; j < values.length; j++) {
+          if (random(1) < rate) {
+            values[j] = uValues[j];
+          }
+        }
+        let newTensor = tf.tensor(values, shape);
+        crossedWeights[i] = newTensor;
+      }
+      this.model.setWeights(crossedWeights);
+    });
+  }
+
   dispose() {
     this.model.dispose();
   }

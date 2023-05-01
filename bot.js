@@ -32,6 +32,10 @@ class Bot{
     ellipse(this.x, this.y, this.r, this.r);
   }
 
+  crossover(rate,partner) {
+    this.brain.crossover(rate,partner);
+  }
+
   mutate() {
     this.brain.mutate(0.1);
   }
