@@ -1,6 +1,9 @@
 function nextGeneration() {
     // DE/Best/1
+    genList.push(gen);
+    maxScoreList.push(maxScore);
     gen++;
+    maxScoreList.push(maxScore);
     maxScore=0;
     calculateFitness();
     let beta = 0.5;
