@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.4/dist/tf.min.js"></script>
-    <title>Jumping Game AI</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <style> 
-      body {padding: 0; 
-            margin: 0; 
-            background-image: url("assets/bg image 4.jpg");   
-            background-repeat: no-repeat;
-    </style>
-  </head>
-  <body>
-    <script src="neuralNetwork.js"></script>
-    <script src="bot.js"></script>
-    <script src="bar.js"></script>
-    <script src="geneticAlgorithm.js"></script>
-    <script src="sketch.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.4/dist/tf.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <title>Jumping Game AI</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-image: url("assets/bg image 4.jpg");
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggle-chart">Toggle Chart</button>
+  <div id="chart-container"></div>
+  <script src="neuralNetwork.js"></script>
+  <script src="bot.js"></script>
+  <script src="bar.js"></script>
+  <!-- <script src="geneticAlgorithm.js"></script> -->
+  <script src="differentialEvolution.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
 </html>

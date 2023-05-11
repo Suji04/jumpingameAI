@@ -6,6 +6,8 @@ let counter = 0;
 let slider;
 let gen = 0;
 let maxScore = 0;
+let genList = [];
+let maxScoreList = [];
 
 function setup() {
   createCanvas(windowWidth, 3*windowHeight/4);
@@ -86,3 +88,57 @@ function draw(){
     bar.show();
   }
 }
+
+var data = {
+  x: genList,
+  y: maxScoreList,
+  type: 'scatter'
+};
+
+// Define the layout
+var layout = {
+  title: 'Max Scores Over Generations',
+  xaxis: {
+    title: 'Generations',
+    titlefont: {
+      family: 'Arial, sans-serif',
+      size: 18,
+      color: 'black'
+  }},
+  yaxis: {
+    title: 'Maximum Score',
+    titlefont: {
+      family: 'Arial, sans-serif',
+      size: 18,
+      color: 'black'
+  }},
+};
+
+// Define the chart container
+var container = document.getElementById('chart-container');
+
+// Define the toggle button
+var toggleButton = document.getElementById('toggle-chart');
+var chartVisible = false;
+
+// Define the plot function
+function plotChart() {
+  Plotly.newPlot(container, [data], layout);
+  chartVisible = true;
+}
+
+// Define the hide function
+function hideChart() {
+  Plotly.purge(container);
+  chartVisible = false;
+}
+
+// Attach the toggle button event listener
+toggleButton.addEventListener('click', function() {
+  if (chartVisible) {
+    hideChart();
+  } else {
+    plotChart();
+  }
+});
+

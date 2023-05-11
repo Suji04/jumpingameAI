@@ -1,6 +1,8 @@
 // taken from The Coding Train
 
 function nextGeneration() {
+  genList.push(gen);
+  maxScoreList.push(maxScore);
   gen++;
   maxScore=0;
   calculateFitness();
