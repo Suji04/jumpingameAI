@@ -99,11 +99,19 @@ var data = {
 var layout = {
   title: 'Max Scores Over Generations',
   xaxis: {
-    title: 'Generations'
-  },
+    title: 'Generations',
+    titlefont: {
+      family: 'Arial, sans-serif',
+      size: 18,
+      color: 'black'
+  }},
   yaxis: {
-    title: 'Maximum Score'
-  }
+    title: 'Maximum Score',
+    titlefont: {
+      family: 'Arial, sans-serif',
+      size: 18,
+      color: 'black'
+  }},
 };
 
 // Define the chart container
